@@ -1,0 +1,16 @@
+(defun pell (n)
+    (cond
+        ((= n 0) 0)
+        ((= n 1) 1)
+        (t (+ (* 2 (pell (- n 1))) (pell (- n 2))))
+    )
+)
+(defun pellLoop (n)
+    (loop
+        (setf n (+ (* 2 (- n 1) (- n 2))))
+    )
+)
+(print (pell(7)))
+(print (pell(9)))
+(print (pellLoop(7)))
+(print (pellLoop(9)))

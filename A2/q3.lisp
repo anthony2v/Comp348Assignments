@@ -1,0 +1,10 @@
+(defvar newList)
+(setf newList '())
+(defun set2 (l)
+    (cond 
+        ((null l))
+        ((listp (car l)) (set2 (car l)))
+        ((characterp (car l)) (append (car l) (set2 (cdr l))))
+    )
+)
+(print (set2 '((z f) (b a 5 3.5) 6 (7) (a) c)))
